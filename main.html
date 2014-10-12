@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="news">
+	<head>
+		<meta author="Alex Goddijn"\>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+		<script type="text/javascript" src="angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<title>Alex News</title>
+	</head>
+	<body>
+		<div class="navdiv">
+			<h1 class="navbar">Alex News</h1>
+			<a class="navbar active" href="main.html">News</a>
+			<a class="navbar" href="submit.html">Submit</a>
+		</div>
+		<div ng-controller="NewsController as newsCtrl" >
+			<form name="articleSubmission" novalidate ng-submit="articleSubmission.$valid && newsCtrl.saveArticle()">
+				<input type="text" autofocus="autofocus" placeholder="Article title" ng-model="newsCtrl.toSubmit.articleTitle" required><br>
+				<input type="url" placeholder="Article url" ng-model="newsCtrl.toSubmit.url" required><br>
+				<input style="width:10%" type="submit" value="submit article">
+			</form>
+			<!--<p> submission form is {{articleSubmission.$valid}} </p>-->	
+		</div>
+		<div ng-controller="NewsController as newsCtrl" style="overflow:auto">
+		<!--<button type="button" ng-click="newsCtrl.calculatePoints()">Calc points</button>
+		<button type="button" ng-click="newsCtrl.updateData()">update data</button>-->
+		<ol>
+			<li ng-repeat="article in newsCtrl.articles | orderBy:'-points'">
+				<div class="article">
+					<button type="button" class="article upvote" ng-click="newsCtrl.upvote(article)"><img src="images/upvote.png"/></button>
+					<a class="article title" href="{{article.url}}" target="_blank">{{article.articleTitle}}</a>
+					<a class="article url" href="{{article.url}}" target="_blank">| {{article.url | urlFormat}} |</a>
+					<p class="article votes">(votes {{article.votes}})</p>
+					<!--<p class="article votes">(points {{article.points}})</p>-->
+				</div>
+			</li>
+		</ol>
+		</div>
+	</body>
+</html>

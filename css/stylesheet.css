@@ -1,0 +1,77 @@
+/** {
+	border: 1px solid black;
+}*/
+
+html, 
+body {
+  height: 100%;
+  background-color: #F8F8F8;
+  color: black;
+  font-family: Verdana;
+}
+
+.navdiv {
+	margin-bottom: 20px;
+}
+
+.navbar {
+	display: inline;
+	text-decoration: none;
+	color: black;
+	margin-right: 20px;
+}
+
+.navbar.active {
+	border-bottom: 2px solid black;
+}
+
+input {
+	width: 60%;
+}
+
+.article.title {
+	font-size: 1em;
+	color: black;
+	font-weight: bold;
+	display: inline;
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+.article.url {
+	text-decoration: none;
+	margin-right: 10px;
+	color: black;
+	font-size: 0.5em;
+	display: inline;
+}
+
+.article.upvote img {
+	height: 17px;
+	width: 17px;
+}
+
+.article.votes {
+	text-decoration: none;
+	color: black;
+	font-size: 0.5em;
+	display: inline;
+}
+
+button {
+	background-color: #F8F8F8;
+	border: none;
+	display: inline;
+}
+
+input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+input.ng-invlaid.ng-pristine {
+	border-color: #F8F8F8;
+}
+
+input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
