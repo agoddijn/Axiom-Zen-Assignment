@@ -37,7 +37,7 @@
 				var curDate = new Date();
 				var timePassedHours = (curDate.getTime() - curArticle.posted.getTime())/(1000*3600);
 				var timePassedSeconds = timePassedHours * 3600; /*you can set it to seconds to speed up the response of the algorithm for testing*/
-				curArticle.points =  curArticle.votes / Math.pow(timePassedSeconds+2,1.8); /*same ranking algorithm as hacker news*/
+				curArticle.points =  curArticle.votes / Math.pow(timePassedHours+2,1.8); /*same ranking algorithm as hacker news*/
 			}
 		};
 	});
